@@ -1,0 +1,524 @@
+.adva {
+  position: relative;
+  background-color: $bl;
+  color: $gr;
+  &__container {
+    padding-top: 230px;
+    padding-bottom: 125px;
+  }
+  &__title {
+    width: 100%;
+    color: $red;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 180%;
+    display: inline-flex;
+    span:first-of-type {
+      width: 610px;
+    }
+    span:last-of-type {
+      width: 810px;
+      background-color: $red;
+      color: $bl;
+      text-transform: uppercase;
+      padding-left: 10px;
+    }
+  }
+  &__body {
+    padding-top: 82px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+  }
+  &__item {
+    padding: 96px 46px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    h3 {
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+    p {
+      font-weight: 500;
+      font-size: 18px;
+    }
+    span {
+      color: $red;
+    }
+  }
+  &__item:hover {
+    h3 {
+      color: $yel;
+    }
+  }
+  &__item:first-child {
+    border: 2px solid $red;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    position: relative;
+    &::before {
+      @include plus;
+      bottom: -12px;
+      left: -12px;
+    }
+    &::after {
+      @include plus;
+      bottom: -12px;
+      right: -12px;
+    }
+  }
+  &__item:nth-child(2) {
+    border: 2px solid $red;
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+    position: relative;
+    &::before {
+      @include plus;
+      bottom: -12px;
+      left: -12px;
+    }
+  }
+  &__item:nth-child(3) {
+    border: 2px solid $red;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    position: relative;
+    &::before {
+      @include plus;
+      bottom: -12px;
+      right: -12px;
+    }
+  }
+  &__item:nth-child(4) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-image: url('../img/chel1.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  &__item:nth-child(5) {
+    border: 2px solid $red;
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    position: relative;
+    &::before {
+      @include plus;
+      bottom: -12px;
+      right: -12px;
+    }
+  }
+  &__item:nth-child(6) {
+    border: 2px solid $red;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    position: relative;
+    &::after {
+      @include plus;
+      top: -12px;
+      right: -12px;
+    }
+    &::before {
+      @include plus;
+      bottom: -12px;
+      right: -12px;
+    }
+  }
+  &__item:nth-child(7) {
+    border-bottom: 2px solid $red;
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+    position: relative;
+    background-image: url('../img/chel2.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    &::before {
+      content: '';
+      width: 2px;
+      height: 290px;
+      bottom: -94%;
+      left: -2px;
+      display: block;
+      position: absolute;
+      background-color: $red;
+    }
+    &::after {
+      content: '';
+      width: 2px;
+      height: 290px;
+      bottom: -94%;
+      right: -2px;
+      display: block;
+      position: absolute;
+      background-color: $red;
+    }
+  }
+  &__item:nth-child(8) {
+    border: 2px solid $red;
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+    position: relative;
+    &::before {
+      @include plus;
+      bottom: -12px;
+      left: -12px;
+    }
+  }
+  &__item:nth-child(9) {
+    border: 2px solid $red;
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    position: relative;
+    &::before {
+      @include plus;
+      top: -12px;
+      right: -12px;
+    }
+  }
+  &__item:nth-child(10) {
+    border-bottom: 2px solid $red;
+    border-right: 2px solid $red;
+    grid-column: 2 / 5;
+    grid-row: 4 / 5;
+    padding: 0;
+    background-image: url("../img/funnel.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 100%;
+  }
+  .adva__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .adva__item.animated-items {
+    background-position: top 300px center;
+  }
+  .adva__item:nth-child(4).animate {
+    animation: gifUp 2.7s ease forwards;
+  }
+  .adva__item:nth-child(7).animate {
+    animation: gifUp 2.7s 500ms ease forwards;
+  }
+
+
+        @media (max-width: 1440px) {
+          &__title {
+            font-size: 3.19vw;
+            span:first-of-type {
+              width: 43.06vw;
+            }
+            span:last-of-type {
+              width: 55.56vw;
+              padding-left: 0.69vw;
+            }
+          }
+        }
+        @media (max-width: 1200px) {
+          &__item:nth-child(7) {
+            &::after {
+              bottom: -87.5%;
+            }
+            &::before {
+              bottom: -87.5%;
+            }
+          }
+        }
+
+        @media (max-width: 1040px) {
+          &__list {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+          }
+          &__item:first-child {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            border: none;
+            border-right: 1px solid $red;
+            &::before,
+            &::after {
+              display: none;
+            }
+          }
+          &__item:nth-child(2) {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            border-left: 1px solid $red;
+            &::before {
+              display: none;
+            }
+          }
+          &__item:nth-child(3) {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            &::before {
+              display: none;
+            }
+          }
+          &__item:nth-child(4) {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            border-right: none;
+          }
+          &__item:nth-child(5) {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+            border-right: 1px solid $red;
+            border-top: none;
+            &::before {
+              display: none;
+            }
+          }
+          &__item:nth-child(6) {
+            grid-column: 2 / 3;
+            grid-row: 3 / 4;
+            border-left: 1px solid $red;
+            border-bottom: none;
+            &::before,
+            &::after {
+              display: none;
+            }
+          }
+          &__item:nth-child(7) {
+            grid-column: 1/ 2;
+            grid-row: 4 / 5;
+            border-left: none;
+            border-bottom: none;
+            &::before,
+            &::after {
+              display: none;
+            }
+          }
+          &__item:nth-child(8) {
+            grid-column: 2 / 3;
+            grid-row: 4 / 5;
+            &::before {
+              display: none;
+            }
+          }
+          &__item:nth-child(9) {
+            grid-column: 1 / 2;
+            grid-row: 5 / 6;
+            &::before {
+              display: none;
+            }
+          }
+          &__item:nth-child(10) {
+            grid-column: 2 / 3;
+            grid-row: 5 / 6;
+            background-size: cover;
+          }
+          &__title {
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            span:first-of-type {
+              width: 100%;
+            }
+            span:last-of-type {
+              width: calc(100% - 4px);
+            }
+          }
+        }
+        @media (max-width: 640px) {
+          &__container {
+            padding-top: 100px;
+            padding-bottom: 0px;
+            overflow: hidden;
+            position: relative;
+            &::before {
+              content: '';
+              width: 205px;
+              height: 205px;
+              position: absolute;
+              top: 26%;
+              right: -40px;
+              background-image: url('../img/chel1.gif');
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center;
+              z-index: 2;
+            }
+            &::after {
+              content: '';
+              width: 205px;
+              height: 205px;
+              position: absolute;
+              top: 71%;
+              right: -40px;
+              background-image: url('../img/chel2.gif');
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center;
+              z-index: 2;
+            }
+          }
+          &__title {
+            font-size: 20px;
+          }
+          &__body {
+            padding-top: 0px;
+          }
+          &__list {
+            display: grid;
+            grid-template-columns: 1fr;
+          }
+          &__item {
+            padding: 68px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            h3 {
+              font-size: 16px;
+              width: 70%;
+            }
+            p {
+              font-size: 14px;
+              width: 70%;
+            }
+          }
+          &__item:nth-child(4),
+          &__item:nth-child(7) {
+            display: none;
+          }
+          &__item:first-child {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            border-top: 2px solid $red;
+            border-left: 2px solid $red;
+            border-right: 2px solid $red;
+          }
+          &__item:nth-child(2) {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            border-top: 2px solid $red;
+            border-left: 2px solid $red;
+            border-right: 2px solid $red;
+          }
+          &__item:nth-child(3) {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+            border-top: none;
+            border-left: 2px solid $red;
+            border-right: 2px solid $red;
+          }
+          &__item:nth-child(5) {
+            grid-column: 1 / 2;
+            grid-row: 4 / 5;
+            border-top: none;
+            border-bottom: none;
+            border-left: 2px solid $red;
+            border-right: 2px solid $red;
+          }
+          &__item:nth-child(6) {
+            grid-column: 1 / 2;
+            grid-row: 5 / 6;
+            border-top: 2px solid $red;
+            border-left: 2px solid $red;
+            border-right: 2px solid $red;
+          }
+          &__item:nth-child(8) {
+            grid-column: 1 / 2;
+            grid-row: 6 / 7;
+            border-top: 2px solid $red;
+            border-right: 2px solid $red;
+          }
+          &__item:nth-child(9) {
+            grid-column: 1 / 2;
+            grid-row: 7 / 8;
+            border-top: none;
+            border-left: 2px solid $red;
+            border-right: 2px solid $red;
+          }
+          &__item:nth-child(10) {
+            grid-column: 1 / 2;
+            grid-row: 8 / 9;
+            min-height: 247px;
+            background-size: 180%;
+            background-position: top left -100px;
+            border-left: 2px solid $red;
+            border-right: 2px solid $red;
+          }
+        }
+        @media (max-width: 440px) {
+          &__title {
+            span:last-of-type {
+              width: calc(100% - 2px);
+            }
+          }
+        }
+
+}
+
+
+@keyframes plusAnim {
+  0% {
+    rotate: 0deg;
+  }
+  6% {
+    rotate: 0deg;
+  }
+  7% {
+    rotate:45deg;
+  }
+  18% {
+    rotate:45deg;
+  }
+  19% {
+    rotate:90deg;
+  }
+  29% {
+    rotate:90deg;
+  }
+  30% {
+    rotate:135deg;
+  }
+  41% {
+    rotate:135deg;
+  }
+  42% {
+    rotate:180deg;
+  }
+  53% {
+    rotate:180deg;
+  }
+  54% {
+    rotate:225deg;
+  }
+  65% {
+    rotate:225deg;
+  }
+  66% {
+    rotate:270deg;
+  }
+  77% {
+    rotate:270deg;
+  }
+  78% {
+    rotate:315deg;
+  }
+  89% {
+    rotate:315deg;
+  }
+  91% {
+    rotate:360deg;
+  }
+  100% {
+    rotate:360deg;
+  }
+}
+
+@keyframes gifUp {
+  from {
+    background-position: top 300px center;
+  }
+  to {
+    background-position: center;
+  }
+}

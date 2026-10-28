@@ -1,0 +1,198 @@
+.terms {
+  position: relative;
+  &__container {
+    max-width: 1420px;
+    background-color: $bl;
+    color: $gr;
+    padding: 0px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    &::before {
+      position: absolute;
+      bottom: -35px;
+      right: -55px;
+      content: '';
+      width: 255px;
+      height: 255px;
+      background-image: url('../img/rok.gif');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      z-index: 4;
+    }
+  }
+  &__title {
+    color: $gr;
+    text-align: center;
+    font-weight: 700;
+    font-size: 27px;
+    padding-top: 36px;
+    padding-bottom: 20px;
+    span {
+      color: $yel;
+      text-transform: uppercase;
+    }
+  }
+  &__wrapper {
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    height: calc(100% - 89px);
+    width: calc((100% + 1280px)/2);
+  }
+  &__top {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__center {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__bottom {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__icon svg {
+    color: $gr;
+  }
+  &__icon svg:hover {
+    color: $red;
+  }
+  &__list {
+    padding-top: 160px;
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+  }
+  &__item {
+    padding-top: 97px;
+    padding-bottom: 97px;
+    row-gap: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__item p {
+    font-weight: 600;
+    font-size: 18px;
+    max-width: 200px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__link {
+    display: block;
+    text-align: center;
+    margin-top: 224px;
+    position: relative;
+    padding-bottom: 6px;
+    cursor: pointer;
+  }
+  &__link svg {
+    color: $bl;
+    animation: arrowMove 2.1s ease-in-out infinite;
+    transform: translateY(0px);
+  }
+  &__li {
+    display: inline-block;
+    border-bottom: 2px solid $bl;
+  }
+
+        @media (max-width: 1100px) {
+          &__container {
+            &::before {
+              bottom: -24px;
+              right: -40px;
+              width: 178px;
+              height: 178px;
+            }
+          }
+        }
+        @media (max-width: 998px) {
+          &__wrapper {
+            width: 100%;
+            background-image: url('../img/star-bg.svg');
+            background-repeat: no-repeat;
+            background-size: 998px;
+            background-position: center top;
+          }
+          &__top,
+          &__center,
+          &__bottom {
+            display: none;
+          }
+          &__list {
+            grid-template-columns: repeat(2, 1fr);
+            padding-left: calc((100% - 640px)/2);
+            padding-right: calc((100% - 640px)/2);
+          }
+        }
+        @media (max-width: 640px) {
+          &__container {
+            width: auto;
+            margin: 0 16px;
+
+          }
+          &__wrapper {
+            display: none;
+          }
+          &__title {
+            padding-bottom: 0px;
+            text-align: left;
+            padding-left: 15px;
+            max-width: 400px;
+          }
+          &__list {
+            padding-top: 100px;
+            padding-left: 15px;
+            padding-bottom: 300px;
+            pointer-events: auto;
+            display: flex;
+            flex-direction: row;
+            column-gap: 50px;
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            position: relative;
+            &::after {
+              position: absolute;
+              content: '';
+              width: 100%;
+              width: 1130px;
+              height: 10px;
+              background-color: $red;
+              bottom: 193px;
+              left: 15px;
+            }
+            &::before {
+              position: absolute;
+              content: '';
+              width: 64px;
+              height: 77px;
+              display: block;
+              bottom: 130px;
+              left: 15px;
+              background-image: url('../img/hand.svg');
+              background-repeat: no-repeat;
+              background-size: contain;
+              z-index: 2;
+            }
+          }
+          &__item {
+            padding: 0;
+          }
+          &__item:last-child {
+            padding-right: 50px;
+          }
+          &__link {
+            margin-top: 60px;
+          }
+          &__item p {
+            font-size: 15px;
+          }
+        }
+}

@@ -1,0 +1,45 @@
+mixin terms(modifier)
+  section.terms
+    .terms__container.container
+      h2.terms__title всё, что нужно <span>для&nbsp;успешной работы</span>
+      .terms__wrapper
+        .terms__top
+          +term-icon
+          +term-icon
+          +term-icon
+          +term-icon
+          +term-icon
+        .terms__center
+          +term-icon
+          +term-icon
+          +term-icon
+          +term-icon
+          +term-icon
+        .terms__bottom
+          +term-icon
+          +term-icon
+          +term-icon
+          +term-icon
+          +term-icon
+      ul.terms__list
+        li.terms__item
+          +smile-icon
+          p.terms__text Персональный менеджер
+        li.terms__item
+          +smile-icon
+          p.terms__text Эксклюзивные офферы
+        li.terms__item
+          +smile-icon
+          p.terms__text Профессиональная служба поддержки 24/7
+        li.terms__item
+          +smile-icon
+          p.terms__text Выплаты в любое время
+        li.terms__item
+          +smile-icon
+          p.terms__text Продвинутая аналитика
+        li.terms__item
+          +smile-icon
+          p.terms__text Дополнительные акции и бонусы
+    a(href="#entry").terms__link
+      .terms__li
+          +link-icon

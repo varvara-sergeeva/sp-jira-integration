@@ -1,0 +1,143 @@
+// @font-face {
+//   font-family: 'Montserrat';
+//   src:
+//       url('../fonts/Montserrat-Regular.woff2') format('woff2'),
+//       url('../fonts/Montserrat-Regular.woff') format('woff'),
+//       url('../fonts/Montserrat-Regular.ttf') format('truetype');
+//   font-weight: 400;
+//   font-style: normal;
+//   font-display: swap;
+// }
+// @font-face {
+//   font-family: 'Montserrat';
+//   src:
+//       url('../fonts/Montserrat-Medium.woff2') format('woff2'),
+//       url('../fonts/Montserrat-Medium.woff') format('woff'),
+//       url('../fonts/Montserrat-Medium.ttf') format('truetype');
+//   font-weight: 500;
+//   font-style: normal;
+//   font-display: swap;
+// }
+// @font-face {
+//   font-family: 'Montserrat';
+//   src:
+//       url('../fonts/Montserrat-SemiBold.woff2') format('woff2'),
+//       url('../fonts/Montserrat-SemiBold.woff') format('woff'),
+//       url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
+//   font-weight: 600;
+//   font-style: normal;
+//   font-display: swap;
+// }
+// @font-face {
+//   font-family: 'Montserrat';
+//   src:
+//       url('../fonts/Montserrat-Bold.woff2') format('woff2'),
+//       url('../fonts/Montserrat-Bold.woff') format('woff'),
+//       url('../fonts/Montserrat-Bold.ttf') format('truetype');
+//   font-weight: 700;
+//   font-style: normal;
+//   font-display: swap;
+// }
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+$header-height: 220px;
+$header-height-m: 165px;
+
+$f1: 'Montserrat', Arial, sans-serif;
+$yellow: #ffeb37;
+$b: #1e1e1e;
+$w: #ffffff;
+
+$red: #CA422C;
+$yel:  #FFEE00;
+$bl: #181818;
+$gr: #E8E8E8;
+
+@mixin font-s($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+@mixin plus {
+  content: '';
+  position: absolute;
+  rotate: 0deg;
+  width: 20px;
+  height: 20px;
+  background-image: url('../img/plus.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  animation: plusAnim 10s infinite;
+  z-index: 5;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  flex-direction: column;
+  overflow-x: hidden;
+  font-family: $f1;
+  background-color: $w;
+  color: $b;
+  box-sizing: border-box;
+  background-image: url('../img/nois.png');
+  background-repeat: repeat;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  line-height: 130%;
+  list-style-type: none;
+}
+picture {
+  display: flex;
+  img {
+    max-width: 100%;
+  }
+}
+.container {
+  width: 100%;
+  max-width: 1452px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+section:first-of-type {
+  padding-top: $header-height;
+}
+* a {
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+}
+
+@media (max-width: 998px) {
+  .section__title {
+    font-size: 32px;
+    line-height: 120%;
+  }
+  section:first-of-type {
+    padding-top: $header-height-m;
+  }
+}
+
+@import "./src/blocks/entry/entry";
+@import "./src/blocks/header/header";
+@import "./src/blocks/intro/intro";
+@import "./src/blocks/terms/terms";
+@import "./src/blocks/showcase/showcase";
+@import "./src/blocks/footer/footer";
+@import "./src/blocks/about/about";
+@import "./src/blocks/compare/compare";
+@import "./src/blocks/adva/adva";
+

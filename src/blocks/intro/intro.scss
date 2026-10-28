@@ -1,0 +1,171 @@
+.intro {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 110px;
+    background-color: $red;
+    bottom: 0;
+    left: 0;
+    display: block;
+    z-index: 1;
+  }
+  &__title {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 50px;
+    background-color: $bl;
+    margin-top: 300px;
+    margin-bottom: 70px;
+    font-weight: 700;
+    font-size: 46px;
+    color: $gr;
+    text-transform: uppercase;
+    padding: 23px 32px 70px;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 1196px;
+      height: 534px;
+      background-image: url('../img/globe.gif');
+      background-size: contain;
+      background-repeat: no-repeat;
+      top: 170px;
+      left: -376px;
+      z-index: 5;
+    }
+    span:nth-child(2){
+      color: $red;
+      position: relative;
+      &::after {
+        content:'';
+        position: absolute;
+        background-image:  url('../img/in-star.svg');
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        top: 20px;
+        left: -35px;
+        rotate: -1deg;
+        width: 20px;
+        height: 20px;
+        animation: plusAnim 10s infinite;
+      }
+    }
+  }
+  &__subtitle {
+    position: absolute;
+    color: $red;
+    font-weight: 500;
+    font-size: 15px;
+    max-width: 325px;
+    top: 88px;
+    right: 32px;
+    text-transform: none;
+    span {
+      text-transform: uppercase;
+    }
+  }
+  &__ticker {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    padding-bottom: 20px;
+    p {
+      flex: 0 0 auto;
+      animation: 25s linear 0s infinite ticker3;
+    }
+  }
+
+        @media (max-width: 1450px) {
+          &__title {
+            padding: 23px 32px 23px;
+          }
+          &__subtitle {
+            top: 96px;
+          }
+        }
+
+        @media (max-width: 1040px){
+          &::after {
+            height: 55px;
+            display: block;
+            z-index: 1;
+          }
+          &__title {
+            position: relative;
+            flex-direction: column;
+            column-gap: 0px;
+            margin-top: 50px;
+            margin-bottom: 40px;
+            padding: 157px 32px 32px;
+            &::before {
+              width: 446px;
+              height: 200px;
+              background-image: url('../img/globe.gif');
+              top: -90px;
+              left: calc((100% - 446px) / 2);
+              z-index: 5;
+            }
+            span:nth-child(2){
+              padding-top: 50px;
+              &::after {
+                top: 18px;
+                left: 0px;
+              }
+            }
+          }
+          &__ticker svg {
+            width: 1155px;
+            height: 145px;
+          }
+          &__subtitle {
+            display: none;
+          }
+      }
+      @media (max-width: 720px) {
+        &__title {
+          font-size: 27px;
+          span:nth-child(2){
+            &::after {
+              top: 16px;
+            }
+          }
+        }
+      }
+      @media (max-width: 640px) {
+        &__title {
+          margin-top: 100px;
+        }
+      }
+}
+
+@keyframes ticker3 {
+  from {transform: translate3d(0,0,0);}
+  to {transform: translate3d(-100%,0,0);}
+}
+
+
+// @keyframes clouds {
+//   0% {
+//     background-position: -700px bottom, -2100px bottom, center bottom;
+//   }
+//   100% {
+//     background-position: 1700px bottom, 1900px bottom, center bottom;
+//   }
+// }
+// @keyframes cloudsm {
+//   0% {
+//     background-position: -700px bottom, -2100px bottom,
+//       left calc(50% - 20px) bottom;
+//   }
+//   100% {
+//     background-position: 1700px bottom, 1900px bottom,
+//       left calc(50% - 20px) bottom;
+//   }
+// }

@@ -1,0 +1,37 @@
+mixin footer(modifier)
+  footer.footer
+    .footer__container.container
+      .footer__top
+          .footer__logo
+              +logo-icon
+          ul.footer__links
+              li
+                a(href="")
+                  p Вебмастеру
+              li
+                a(href="")
+                  p Рекламодателю
+              li
+                a(href="")
+                  p О нас
+              li
+                a(href="")
+                  p FAQ
+              li
+                a(href="")
+                  p Контакты
+          .footer__social
+              a(href="https://www.youtube.com/c/academycpa" target="_blank" rel="noopener noreferrer nofollow")
+                span youtube
+              a(href="https://vk.com/official.offerrum" target="_blank" rel="noopener noreferrer nofollow")
+                span вк
+              a(href="https://t.me/sp_offerrum" target="_blank" rel="noopener noreferrer nofollow")
+                span tg
+
+      .footer__bottom
+          span.footer__copyright Offerrum 2017-2026
+          .footer__agreement
+              a(href="")
+                p.footer__doc Пользовательское соглашение
+              a(href="")
+                p.footer__doc Политика конфиденциальности

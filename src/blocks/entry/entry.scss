@@ -1,0 +1,225 @@
+.entry {
+  position: relative;
+  background-color: $bl;
+  color: $gr;
+  &::before {
+    position: absolute;
+    content: '';
+    width: 312px;
+    height: 312px;
+    background-image: url('../img/chelik3.gif');
+    background-size: contain;
+    top: 48%;
+    left: calc(((100% - 312px)/2) + 379px);
+    left: calc(((100% - 312px)/2) + 530px);
+    z-index: 0;
+  }
+  &__container {
+    margin: 0 auto;
+    padding-top: 250px;
+    padding-bottom: 250px;
+    position: relative;
+  }
+  &__body {
+    max-width: 940px;
+    margin: 0 auto;
+    background-color: $bl;
+  }
+  &__ticker {
+    background-color: $red;
+    background-image: url('../img/nois.png');
+    background-repeat: repeat;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    color: white;
+    padding: 20px 0px;
+    position: relative;
+    z-index: 2;
+    &::after,
+    &::before {
+      position: absolute;
+      width: 16px;
+      height: calc(100% - 2px);
+      content: '';
+      background-color: $red;
+      background-image: url('../img/nois.png');
+      background-repeat: repeat;
+      top: 0;
+      z-index: 3;
+    }
+    &::after {
+      left: 0;
+    }
+    &::before {
+      right: 0;
+    }
+    p {
+      color: $bl;
+      font-weight: 700;
+      font-size: 46px;
+      line-height: 115%;
+      padding-left: 77px;
+      position: relative;
+      text-transform: uppercase;
+      flex: 0 0 auto;
+      animation: 10s linear 0s infinite ticker;
+      &::before {
+        position: absolute;
+        top: calc((100% - 46px)/2);
+        left: 20px;
+        content: url("../img/ticker-icon.svg");
+      }
+    }
+  }
+  &__info {
+    border-left: 2px solid $red;
+    border-right: 2px solid $red;
+    min-height: 230px;
+    padding: 78px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__info p {
+    max-width: 400px;
+    font-weight: 500;
+    font-size: 16px;
+    span {
+      color: $red;
+    }
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 26px;
+    span {
+      text-transform: uppercase;
+    }
+  }
+  &__links {
+    width: 100%;
+    display: flex;
+  }
+  &__link {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 89px;
+    cursor: pointer;
+    span {
+      color: $red;
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+      transition: 0.3s ease;
+    }
+  }
+  &__link:first-of-type {
+    background-color: #fff;
+    background-image: url('../img/nois.png');
+    background-repeat: repeat;
+    border: 2px solid $red;
+    transition: 0.3s ease;
+    &:hover,
+    &:active {
+      background-color: $red;
+      background-image: none;
+      span {
+        color: $gr;
+      }
+    }
+  }
+  &__link:last-of-type {
+    border-top: 2px solid $red;
+    border-bottom: 2px solid $red;
+    border-right: 2px solid $red;
+    transition: 0.3s ease;
+    &:hover,
+    &:active {
+      border-top: 2px solid $yel;
+      border-bottom: 2px solid $yel;
+      border-right: 2px solid $yel;
+      span {
+        color: $yel;
+      }
+    }
+  }
+      @media (max-width: 1200px) {
+        &::before {
+          width: 255px;
+          height: 255px;
+          top: 70%;
+          left: -75px;
+          z-index: 0;
+        }
+      }
+      @media (max-width: 998px) {
+        &__container {
+          margin: 0 auto;
+          padding-top: 100px;
+          padding-bottom: 285px;
+        }
+      }
+      @media (max-width: 640px) {
+        &::before {
+          top: 75%;
+        }
+        &__ticker {
+          &::after,
+          &::before {
+            display: none;
+          }
+          p {
+            font-size: 27px;
+            padding-left: 67px;
+            animation: 10s linear 0s infinite ticker;
+            &::before {
+              left: 16px;
+              content: url("../img/ticker-icon.svg");
+            }
+          }
+        }
+        &__title {
+          font-weight: 600;
+          font-size: 20px;
+        }
+        &__info {
+          padding: 54px 20px;
+          row-gap: 40px;
+        }
+        &__links {
+          flex-direction: column;
+          width: auto;
+        }
+        &__link {
+          width: auto;
+          height: 65px;
+        }
+        &__link:first-of-type {
+          border-top: 2px solid $red;
+          border-left: 2px solid $red;
+          border-right: 2px solid $red;
+          border-bottom: none;
+        }
+        &__link:last-of-type {
+          border-top: 2px solid $red;
+          border-left: 2px solid $red;
+          border-right: 2px solid $red;
+          &:hover,
+          &:active {
+            border-color: $yel;
+          }
+        }
+      }
+      @media (max-width: 440px) {
+        &__title {
+          width: 240px;
+        }
+      }
+}
+
+@keyframes ticker {
+  from {transform: translate3d(0,0,0);}
+  to {transform: translate3d(-100%,0,0);}
+}

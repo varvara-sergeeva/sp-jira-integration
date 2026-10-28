@@ -1,0 +1,215 @@
+.about {
+  overflow: hidden;
+  position: relative;
+  background-color: $red;
+  margin-top: -1px;
+  &__container {
+    overflow: hidden;
+    padding-top: 250px;
+    padding-bottom: 240px;
+  }
+  &__body {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid $gr;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: calc(100% + 4px);
+      height: 235px;
+      bottom: -237px;
+      left: -2px;
+      background-color: $red;
+      background-image: url('../img/texture.png');
+      background-repeat: no-repeat;
+      background-blend-mode: darken;
+      background-size: cover;
+    }
+  }
+  &__box {
+    display: flex;
+    flex-direction: row;
+    &:first-of-type {
+      padding: 236px 40px 60px;
+      position: relative;
+      &::before {
+        content: '';
+        width: 380px;
+        height: 180px;
+        display: block;
+        background-image: url('../img/stiker.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: -90px;
+        right: -70px;
+      }
+    }
+  }
+  &__box p {
+    font-weight: 500;
+    font-size: 16px;
+  }
+  &__box:last-of-type {
+    border-left: 2px solid $gr;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 100px;
+    color: $gr;
+    padding: 236px 70px 60px 70px;
+    position: relative;
+    &::before {
+      content: '';
+      width:207px;
+      height: 207px;
+      display: block;
+      background-image: url('../img/like.gif');
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      bottom: -25%;
+      left: calc((100% - 207px)/2);
+      z-index: 5;
+    }
+    p:first-of-type {
+      max-width: 344px;
+    }
+    p:last-of-type {
+      max-width: 360px;
+    }
+    span {
+      color: $yel;
+    }
+    span a {
+      border-bottom: 1px solid $yel;
+    }
+    b {
+      text-transform: uppercase;
+    }
+  }
+  &__title {
+    text-transform: uppercase;
+    width: 356px;
+    color: $gr;
+    h2 {
+      font-weight: 600;
+      font-size: 46px;
+    }
+    span {
+      color: $yel;
+    }
+  }
+  &__link {
+    display: block;
+    text-align: center;
+    margin-top: 224px;
+    position: relative;
+    padding-bottom: 6px;
+    cursor: pointer;
+  }
+
+  &__link svg {
+    color: $yel;
+    animation: arrowMove 2.1s ease-in-out infinite;
+    transform: translateY(0px);
+  }
+  &__li {
+    display: inline-block;
+    border-bottom: 2px solid $yel;
+  }
+  a {
+    color: $yel;
+  }
+
+        @media (max-width: 1400px) {
+          &__box:last-of-type {
+            width: 100%;
+            flex-direction: column;
+            padding: 60px 70px 60px 70px;
+            row-gap: 40px;
+            justify-content: flex-end;
+            column-gap: 0;
+            &::before {
+              bottom: calc((100% - 207px)/2);
+              left: 65%;
+            }
+          }
+        }
+        @media (max-width: 1040px) {
+          &__body {
+            flex-direction: column;
+          }
+          &__box:first-of-type {
+            &::before {
+              top: -40px;
+              right: -20px;
+            }
+          }
+          &__box:last-of-type {
+            width: auto;
+            border-left: none;
+            border-top: 2px solid $gr;
+          }
+          &__container {
+            padding-top: 150px;
+          }
+          &__link {
+            margin-top: 150px;
+          }
+        }
+        @media (max-width: 640px) {
+          &__body {
+            &::after {
+              height: 215px;
+              bottom: -217px;
+            }
+          }
+          &__box:first-of-type {
+            padding: 130px 15px 24px;
+            &::before {
+              width: 320px;
+              height: 131px;
+              top: -30px;
+              right: -60px;
+            }
+          }
+          &__box:last-of-type {
+            padding: 50px 15px;
+            &::before {
+              width: 141px;
+              height: 141px;
+              bottom: -207px;
+              left: calc((100% - 141px)/2);
+            }
+          }
+          &__title h2 {
+            font-size: 27px;
+          }
+          &__link {
+            margin-top: 70px;
+          }
+        }
+        @media (max-width: 440px) {
+          .about__box:first-of-type::before {
+            width: 320px;
+            scale: 1.15;
+            height: 131px;
+            top: -30px;
+            right: -45px;
+        }
+        }
+}
+
+@keyframes arrowMove {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

@@ -1,0 +1,197 @@
+.compare {
+  position: relative;
+  background-color: $bl;
+  color: $gr;
+  padding-top: 125px;
+  padding-bottom: 250px;
+
+  h2 {
+    font-weight: 700;
+    font-size: 46px;
+    text-transform: uppercase;
+  }
+
+  table {
+    width: 100%;
+    margin-top: 29px;
+    border-collapse:collapse;
+  }
+  table th,
+  table td {
+    padding: 30px 20px;
+    text-transform: uppercase;
+  }
+  table th:first-child {
+    background-color: $red;
+    background-image: linear-gradient(90deg, #181818 25%, #E8E8E8 25%, #E8E8E8 50%, #181818 50%, #181818 75%, #E8E8E8 75%, #E8E8E8 100%);
+    background-size: 12px 12px;
+    border-left: 2px solid $gr;
+    border-top: dashed solid red;
+  }
+  table th:nth-child(2) {
+    border: 2px solid $gr;
+  }
+  table td:nth-child(2) {
+    font-size: 30px;
+    line-height: 20px;
+  }
+  table th:nth-child(3) {
+    color: $red;
+    border-right: 2px solid $red;
+    border-top: 2px solid $red;
+  }
+  table th:last-child {
+    color: $red;
+    border: 2px solid $red;
+  }
+  tr td:first-child {
+    background-color: $bl;
+    width: 480px;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  tr td:not(:first-child ) {
+    text-align: center;
+  }
+  tr td:first-child,
+  tr td:nth-child(2) {
+    border: 2px solid $gr;
+  }
+  tr td:nth-child(3) {
+    color: $red;
+    border-top: 2px solid $red;
+    border-right: 2px solid $red;
+    border-bottom: 2px solid $red;
+  }
+  tr td:last-child {
+    color: $red;
+    border: 2px solid $red;
+  }
+  tr:last-child > td:nth-child(3),
+  tr:last-child > td:last-child {
+    text-transform: lowercase;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+
+      @media (max-width: 1450px) {
+        h2 {
+          font-size: 2.32vw;
+          font-size: 3.24vw;
+        }
+      }
+
+      @media (max-width: 998px) {
+        padding-bottom: 150px;
+        &__table {
+          padding-bottom: 50px;
+          position: relative;
+        }
+        table {
+          width: 546px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        table th {
+          padding: 18px 14px;
+          text-transform: uppercase;
+        }
+        table td {
+          padding: 24px 20px;
+          text-transform: uppercase;
+        }
+        & tr td:first-child {
+          font-size: 12px;
+        }
+        & table th,
+        & table td {
+          font-size: 12px;
+        }
+        tr td:first-child {
+          min-width: 148px;
+        }
+        tr td:nth-child(2),
+        tr td:nth-child(3),
+        tr td:last-child {
+          min-width: 78px;
+        }
+        tr:last-child > td:nth-child(3),
+        tr:last-child > td:last-child {
+          text-transform: lowercase;
+          font-size: 12px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        padding-top: 100px;
+        h2 {
+          text-align: center;
+          font-size: 18px;
+        }
+        &__table {
+          overflow-x: scroll;
+        }
+        &__container {
+          position: relative;
+          &::after {
+            position: absolute;
+            content: '';
+            width: calc((192vw - 30px)/2);
+            height: 10px;
+            background-color: $red;
+            bottom: 0;
+            left: 15px;
+          }
+          &::before {
+            position: absolute;
+            content: '';
+            width: 64px;
+            height: 77px;
+            display: block;
+            bottom: -64px;
+            left: 15px;
+            background-image: url('../img/hand.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 2;
+          }
+        }
+        &__table {
+          padding-bottom: 50px;
+          position: relative;
+        }
+
+        table {
+          width: 546px;
+        }
+        table th {
+          padding: 18px 14px;
+          text-transform: uppercase;
+        }
+        table td {
+          padding: 24px 20px;
+          text-transform: uppercase;
+        }
+        & tr td:first-child {
+          font-size: 12px;
+        }
+        & table th,
+        & table td {
+          font-size: 12px;
+        }
+        tr td:first-child {
+          min-width: 148px;
+        }
+        tr td:nth-child(2),
+        tr td:nth-child(3),
+        tr td:last-child {
+          min-width: 78px;
+        }
+        tr:last-child > td:nth-child(3),
+        tr:last-child > td:last-child {
+          text-transform: lowercase;
+          font-size: 12px;
+        }
+      }
+}

@@ -1,0 +1,96 @@
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding-top: 185px;
+  z-index: 5;
+  // background-image: url('../img/nois.png');
+  // background-repeat: repeat;
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  picture {
+    justify-content: center;
+  }
+  &__link {
+    position: relative;
+    color: $red;
+    cursor: pointer;
+    @include font-s(15px, 700);
+    text-transform: uppercase;
+    &::before {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: $red;
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      transition: 0.2s ease;
+    }
+    &::after {
+      content: '';
+      width: 100%;
+      height: 1rem;
+      display: block;
+      background-image: url(../img/h-arr.svg);
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-size: auto;
+      position: absolute;
+      right: -120px;
+      top: 6px;
+      opacity: 1;
+      transition: 0.2s ease;
+    }
+    &:hover::after {
+      background-position: top right -110px;
+    }
+    &:hover::before {
+      background-color: transparent;
+    }
+  }
+  &__btn {
+    border: 4px solid $bl;
+    border-radius: 1px;
+    cursor: pointer;
+    background-color: $bl;
+    font-family: $f1;
+    color: $gr;
+    @include font-s(18px, 700);
+    font-weight: bold;
+    letter-spacing: 0.7px;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 0px 8px;
+    transition: 0.3s ease-out;
+    &:hover {
+      background-color: transparent;
+      color: $bl;
+    }
+  }
+
+      @media (max-width: 1040px) {
+        padding-top: 50px;
+        &__link {
+          position: absolute;
+          left: calc((100% - 200px)/2);
+        }
+      }
+      @media (max-width: 640px) {
+        padding-top: 34px;
+        &__link {
+          position: absolute;
+          left: calc((100% - 160px)/2);
+          top: 100px;
+          &::after {
+            display: none;
+          }
+        }
+      }
+}
